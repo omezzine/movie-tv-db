@@ -35,3 +35,13 @@ test('should search db', async () => {
   expect(result.current.isLoading).toBe(false);
   expect(result.current.query).toStrictEqual(query);
 });
+
+test('should reset data when empty', () => {
+  const { result } = renderHook(() => useSearchDb({ apiKey: 'my_api_key', debounce: 1 }));
+
+  expect(result.current.query.type).toBe('movie');
+  act(() => {
+    result.current.updateQuery({ query: '' });
+  });
+  expect(result.current.data).toBe(null);
+});
