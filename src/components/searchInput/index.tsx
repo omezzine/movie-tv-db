@@ -15,7 +15,7 @@ const SearchInput: React.FC<SearchInputPropsI> = ({ placeHolder, onInputChange, 
       <div className="input-group">
         <input
           defaultValue={defaultValue.query}
-          onChange={(e) => onInputChange({ query: e.currentTarget.value })}
+          onChange={(e) => onInputChange({ query: e.currentTarget.value, page: '1' })}
           type="text"
           className="form-control"
           placeholder={placeHolder}
