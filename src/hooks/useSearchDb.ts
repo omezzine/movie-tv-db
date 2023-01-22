@@ -37,7 +37,7 @@ export const useSearchDb = (props: UseSearchPropsI) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setApiData] = useState<SerchData>();
   const [serverError, setServerError] = useState<AxiosError>();
-  const [query, setQuery] = useState<QueryI>({ ...paramsToObject(searchParams.entries()), ...{ type: 'movie' } });
+  const [query, setQuery] = useState<QueryI>({ ...{ type: 'movie' }, ...paramsToObject(searchParams.entries()) });
 
   const updateQuery = (obj: QueryI) => {
     setQuery({
