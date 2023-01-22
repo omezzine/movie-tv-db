@@ -43,5 +43,5 @@ test('should reset data when empty', () => {
   act(() => {
     result.current.updateQuery({ query: '' });
   });
-  expect(result.current.data).toBe(null);
+  expect(result.current.data).toBeUndefined();
 });

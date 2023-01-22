@@ -47,7 +47,9 @@ export const useSearchDb = (props: UseSearchPropsI) => {
   };
   useEffect(() => {
     if (query?.query?.trim().length === 0) {
-      setApiData(null);
+      delete query.query;
+      setSearchParams(query as any);
+      setApiData(undefined);
       return;
     }
     const fetchData = async () => {
