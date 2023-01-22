@@ -3,9 +3,10 @@ import axios, { AxiosError } from 'axios';
 import constants from '../constants';
 import { toast } from 'react-toastify';
 import { Movie } from '../models/movie';
+import { DbType } from '../models/db';
 
 interface UseDetailPropsI {
-  type?: string;
+  type?: DbType;
   id?: string;
   apiKey: string;
 }

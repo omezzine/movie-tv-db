@@ -1,4 +1,5 @@
 import { QueryI } from '../../hooks/useSearchDb';
+import { DbType } from '../../models/db';
 import './style.scss';
 
 interface SearchInputPropsI {
@@ -7,7 +8,6 @@ interface SearchInputPropsI {
   onInputChange: (obj: QueryI) => void;
   onTypeChange: (obj: QueryI) => void;
 }
-type dbType = 'movie' | 'tv';
 
 const SearchInput: React.FC<SearchInputPropsI> = ({ placeHolder, onInputChange, onTypeChange, defaultValue }) => {
   return (
@@ -27,7 +27,7 @@ const SearchInput: React.FC<SearchInputPropsI> = ({ placeHolder, onInputChange, 
             defaultValue={defaultValue.type || 'movie'}
             className="form-select"
             aria-label="Select Search Type"
-            onChange={(e) => onTypeChange({ type: e.target.value as dbType, page: '1' })}
+            onChange={(e) => onTypeChange({ type: e.target.value as DbType, page: '1' })}
           >
             <option value="movie">Movie</option>
             <option value="tv">Serie</option>

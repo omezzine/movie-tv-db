@@ -2,13 +2,14 @@ import constants from '../../constants';
 import { Movie } from '../../models/movie';
 import noImagePlaceHolder from '../../assets/No-Image-Placeholder.svg.png';
 import './dbCard.scss';
+import { DbType } from '../../models/db';
 
 export interface OnCardClickEvent {
   id: number;
-  type: 'movie' | 'tv';
+  type: DbType;
 }
 interface DbCardPropsI {
-  type?: 'movie' | 'tv';
+  type?: DbType;
   data: Movie;
   onClick: (obj: OnCardClickEvent) => void;
 }

@@ -3,12 +3,12 @@ import axios, { AxiosError } from 'axios';
 import constants from '../constants';
 import { toast } from 'react-toastify';
 import { Movie } from '../models/movie';
-
+import { DbType } from '../models/db';
 import { useSearchParams } from 'react-router-dom';
 
 export interface QueryI {
   page?: string;
-  type?: 'movie' | 'tv';
+  type?: DbType;
   query?: string;
 }
 interface UseSearchPropsI {
@@ -24,7 +24,7 @@ interface SerchData {
 }
 
 const paramsToObject = (entries: IterableIterator<[string, string]>) => {
-  const result: Record<string, any> = {};
+  const result: Record<string, string> = {};
   for (const [key, value] of entries) {
     result[key] = value;
   }
@@ -48,13 +48,13 @@ export const useSearchDb = (props: UseSearchPropsI) => {
   useEffect(() => {
     if (query?.query?.trim().length === 0) {
       delete query.query;
-      setSearchParams(query as any);
+      setSearchParams(query as URLSearchParams);
       setApiData(undefined);
       return;
     }
     const fetchData = async () => {
       setIsLoading(true);
-      setSearchParams(query as any);
+      setSearchParams(query as URLSearchParams);
       await axios
         .get<any>(
           `${constants.MOVIE_SERIE_DB.ENDPOINT}/search/${query.type}?api_key=${props.apiKey}&query=${
