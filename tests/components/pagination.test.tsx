@@ -1,18 +1,13 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
-import React from 'react'
-import  Pagination  from '../../src/components/pagination';
+import React from 'react';
+import Pagination from '../../src/components/pagination';
 
 describe('Pagination Component', () => {
   it('display Pagination', async () => {
     const onPaginationCHange = vi.fn();
     const { container } = render(
-      <Pagination
-        pageCount={10}
-        currentPage={'1'}
-        offset={1}
-        onChange={onPaginationCHange}
-      />,
+      <Pagination pageCount={10} currentPage={'1'} offset={1} onChange={onPaginationCHange} />,
     );
 
     // screen.debug();

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import React from 'react'
+import React from 'react';
 import { Spinner } from '../../src/components/spinner';
 
 test('displays spinner', async () => {

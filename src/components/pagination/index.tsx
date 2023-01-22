@@ -1,5 +1,3 @@
-
-
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
@@ -10,14 +8,9 @@ export interface PaginationPropsI {
   currentPage?: string;
 }
 interface PageClickEvent {
-    selected: number
+  selected: number;
 }
-const Pagination: React.FC<PaginationPropsI> = ({
-  offset,
-  pageCount,
-  onChange,
-  currentPage
-}) => {
+const Pagination: React.FC<PaginationPropsI> = ({ offset, pageCount, onChange, currentPage }) => {
   const [, setItemOffset] = useState(offset);
 
   const handlePageClick = (event: PageClickEvent) => {

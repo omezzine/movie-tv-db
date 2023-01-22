@@ -6,8 +6,7 @@ import { Movie } from '../models/movie';
 
 import { useSearchParams } from 'react-router-dom';
 
-
-export interface QueryI  {
+export interface QueryI {
   page?: string;
   type?: 'movie' | 'tv';
   query?: string;
@@ -25,12 +24,12 @@ interface SerchData {
 }
 
 const paramsToObject = (entries: IterableIterator<[string, string]>) => {
-  const result:Record<string, any>  = {}
-  for(const [key, value] of entries) { 
+  const result: Record<string, any> = {};
+  for (const [key, value] of entries) {
     result[key] = value;
   }
   return result;
-}
+};
 
 export const useSearchDb = (props: UseSearchPropsI) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -38,15 +37,14 @@ export const useSearchDb = (props: UseSearchPropsI) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setApiData] = useState<SerchData>();
   const [serverError, setServerError] = useState<AxiosError>();
-  const [query, setQuery] = useState<QueryI>({...paramsToObject(searchParams.entries()), ...{type: 'movie'}});
-  
+  const [query, setQuery] = useState<QueryI>({ ...paramsToObject(searchParams.entries()), ...{ type: 'movie' } });
+
   const updateQuery = (obj: QueryI) => {
     setQuery({
       ...query,
-    ...obj
-    })
-    
-  }
+      ...obj,
+    });
+  };
   useEffect(() => {
     if (query?.query?.trim().length === 0) {
       return;
@@ -56,10 +54,17 @@ export const useSearchDb = (props: UseSearchPropsI) => {
       setSearchParams(query as any);
       await axios
         .get<any>(
-          `${constants.MOVIE_SERIE_DB.ENDPOINT}/search/${query.type}?api_key=${props.apiKey}&query=${query.query}&page=${query.page || ''}`
+          `${constants.MOVIE_SERIE_DB.ENDPOINT}/search/${query.type}?api_key=${props.apiKey}&query=${
+            query.query
+          }&page=${query.page || ''}`,
         )
         .then((data) => {
-          setApiData({movies: data.data.results, count: data.data.total_results, page: data.data.page, totalPages: data.data.total_pages});
+          setApiData({
+            movies: data.data.results,
+            count: data.data.total_results,
+            page: data.data.page,
+            totalPages: data.data.total_pages,
+          });
         })
         .catch((error: AxiosError) => {
           setServerError(error);
@@ -73,7 +78,6 @@ export const useSearchDb = (props: UseSearchPropsI) => {
     const fetchDataTimeout = setTimeout(() => fetchData(), props.debounce || 0);
 
     return () => clearTimeout(fetchDataTimeout);
-
   }, [query]);
 
   return { isLoading, data, updateQuery, serverError, query };
