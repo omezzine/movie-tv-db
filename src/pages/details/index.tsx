@@ -6,11 +6,12 @@ import constants from '../../constants';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../../components/spinner';
 import { useEffect, useState } from 'react';
+import { DbType } from '../../models/db';
 
 function Details() {
   useTitle('Details');
   let { id, type } = useParams();
-  const { isLoading, data } = useDetailDb({ apiKey: constants.MOVIE_SERIE_DB.API_KEY, id, type });
+  const { isLoading, data } = useDetailDb({ apiKey: constants.MOVIE_SERIE_DB.API_KEY, id, type: type as DbType });
   const [imagePath, setImagePath] = useState<string>();
 
   useEffect(() => {
