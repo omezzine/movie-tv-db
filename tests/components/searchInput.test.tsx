@@ -18,7 +18,7 @@ describe('DB Card test', () => {
       <SearchInput defaultValue={{}} onInputChange={onInputChange} onTypeChange={onTypeChange} />,
     );
     fireEvent.change(container.querySelector('input') as HTMLElement, { target: { value: 'matrix' } });
-    expect(onInputChange).toHaveBeenCalledWith({ query: 'matrix' });
+    expect(onInputChange).toHaveBeenCalledWith({ query: 'matrix', page: '1' });
   });
   test('Should call fn when select change', () => {
     const onInputChange = vi.fn();
