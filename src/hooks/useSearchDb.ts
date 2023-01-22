@@ -75,7 +75,12 @@ export const useSearchDb = (props: UseSearchPropsI) => {
         });
     };
 
-    const fetchDataTimeout = setTimeout(() => fetchData(), props.debounce || 0);
+    let fetchDataTimeout: any;
+    if (props.debounce) {
+      fetchDataTimeout = setTimeout(() => fetchData(), props.debounce);
+    } else {
+      fetchData();
+    }
 
     return () => clearTimeout(fetchDataTimeout);
   }, [query]);
