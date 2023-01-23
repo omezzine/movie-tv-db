@@ -46,9 +46,8 @@ export const useSearchDb = (props: UseSearchPropsI) => {
     });
   };
   useEffect(() => {
-    if (query?.query?.trim().length === 0) {
+    if (!query?.query || query?.query?.trim().length === 0) {
       delete query.query;
-      setSearchParams(query as URLSearchParams);
       setApiData(undefined);
       return;
     }
