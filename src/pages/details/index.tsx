@@ -25,10 +25,10 @@ function Details() {
       {isLoading && <Spinner />}
       {data && (
         <>
-          <h1 className="text-center title">{data?.title}</h1>
+          <h1 className="text-center title">{data.title || data.name}</h1>
           <img className="card-img-top" src={imagePath} alt="Card image cap" />
           <h4>Released Date:</h4>
-          <p>{data.release_date}</p>
+          <p>{data.release_date || data.first_air_date}</p>
           <h4>Overview:</h4>
           <p>{data.overview}</p>
         </>

@@ -4,6 +4,7 @@ import constants from '../constants';
 import { toast } from 'react-toastify';
 import { Movie } from '../models/movie';
 import { DbType } from '../models/db';
+import { Tv } from '../models/tv';
 
 interface UseDetailPropsI {
   type?: DbType;
@@ -13,7 +14,7 @@ interface UseDetailPropsI {
 
 export const useDetailDb = (props: UseDetailPropsI) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setApiData] = useState<Movie>();
+  const [data, setApiData] = useState<Movie & Tv>();
   const [serverError, setServerError] = useState<AxiosError>();
 
   useEffect(() => {
