@@ -21,7 +21,7 @@ function Home() {
   };
 
   const onCardClick = (obj: OnCardClickEvent) => {
-    navigate(`/details/${obj.type}/${obj.id}`, { replace: true });
+    navigate(`/details/${obj.type}/${obj.id}`);
   };
 
   return (
