@@ -1,0 +1,28 @@
+// Vitest Snapshot v1
+
+exports[`DB Card test > Should match snapshot 1`] = `
+<div
+  className="card"
+  onClick={[Function]}
+>
+  <img
+    alt="Card image cap"
+    className="card-img-top"
+    src="https://image.tmdb.org/t/p/w500/waCRuAW5ocONRehP556vPexVXA9.jpg"
+  />
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-title"
+    >
+      The Matrix
+    </h5>
+    <p
+      className="card-text text-truncate"
+    >
+      Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.
+    </p>
+  </div>
+</div>
+`;

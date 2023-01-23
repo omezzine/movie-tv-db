@@ -1,0 +1,39 @@
+// Vitest Snapshot v1
+
+exports[`DB Card test > Should match snapshot 1`] = `
+<div
+  className="search-input"
+>
+  <div
+    className="input-group"
+  >
+    <input
+      aria-describedby="basic-addon2"
+      className="form-control"
+      onChange={[Function]}
+      type="text"
+    />
+    <div
+      className="input-group-prepend"
+    >
+      <select
+        aria-label="Select Search Type"
+        className="form-select"
+        defaultValue="movie"
+        onChange={[Function]}
+      >
+        <option
+          value="movie"
+        >
+          Movie
+        </option>
+        <option
+          value="tv"
+        >
+          Serie
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;

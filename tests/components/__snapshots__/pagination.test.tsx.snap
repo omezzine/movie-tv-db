@@ -1,0 +1,132 @@
+// Vitest Snapshot v1
+
+exports[`Pagination Component > Should match snapshot 1`] = `
+<ul
+  aria-label="Pagination"
+  className="pagination"
+  role="navigation"
+>
+  <li
+    className="page-item disabled"
+  >
+    <a
+      aria-disabled="true"
+      aria-label="Previous page"
+      className="page-link "
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      rel="prev"
+      role="button"
+      tabIndex="-1"
+    >
+      &lt; previous
+    </a>
+  </li>
+  <li
+    className="page-item active"
+  >
+    <a
+      aria-current="page"
+      aria-label="Page 1 is your current page"
+      className="page-link"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      rel="canonical"
+      role="button"
+      tabIndex="-1"
+    >
+      1
+    </a>
+  </li>
+  <li
+    className="page-item"
+  >
+    <a
+      aria-current={null}
+      aria-label="Page 2"
+      className="page-link"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      rel="next"
+      role="button"
+      tabIndex="0"
+    >
+      2
+    </a>
+  </li>
+  <li
+    className="page-item"
+  >
+    <a
+      aria-current={null}
+      aria-label="Page 3"
+      className="page-link"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      3
+    </a>
+  </li>
+  <li
+    className="page-item"
+  >
+    <a
+      className="page-link"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      ...
+    </a>
+  </li>
+  <li
+    className="page-item"
+  >
+    <a
+      aria-current={null}
+      aria-label="Page 9"
+      className="page-link"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      9
+    </a>
+  </li>
+  <li
+    className="page-item"
+  >
+    <a
+      aria-current={null}
+      aria-label="Page 10"
+      className="page-link"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      10
+    </a>
+  </li>
+  <li
+    className="page-item"
+  >
+    <a
+      aria-disabled="false"
+      aria-label="Next page"
+      className="page-link"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      rel="next"
+      role="button"
+      tabIndex="0"
+    >
+      next &gt;
+    </a>
+  </li>
+</ul>
+`;

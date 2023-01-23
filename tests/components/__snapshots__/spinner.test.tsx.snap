@@ -1,0 +1,13 @@
+// Vitest Snapshot v1
+
+exports[`should match snapshot spinner 1`] = `
+<div
+  aria-busy="true"
+  className="loader-container"
+  role="alert"
+>
+  <div
+    className="loader"
+  />
+</div>
+`;

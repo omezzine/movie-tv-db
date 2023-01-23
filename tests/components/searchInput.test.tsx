@@ -2,8 +2,16 @@ import { describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import SearchInput from '../../src/components/searchInput';
 import React from 'react';
+import renderer from 'react-test-renderer';
 
 describe('DB Card test', () => {
+  test('Should match snapshot', () => {
+    const search = renderer
+      .create(<SearchInput defaultValue={{}} onInputChange={(e) => ({})} onTypeChange={(e) => ({})} />)
+      .toJSON();
+    expect(search).toMatchSnapshot();
+  });
+
   test('Should render correctly', () => {
     const { container } = render(
       <SearchInput defaultValue={{}} onInputChange={(e) => ({})} onTypeChange={(e) => ({})} />,
